@@ -12,9 +12,9 @@ it is entirely standalone and requires just PHP to run.
 
 Now we need to create the database object and set it up. In this example we are using a database called CMS. The database is created automatically if it does not exist.
 
-```require_once('ffdb/dbase.php');
+require_once('ffdb/dbase.php');
 $db = new Flatsql();
-$db->query("use dbase cms");```
+$db->query("use dbase cms");
 
 
 ## INSERT Statement
@@ -22,42 +22,56 @@ To insert a row, use the following sql statements. An autoincrement ID is gener
 And oh, there is no create table function, table is created automatically if it does not already exist. 
 The return value is the newly generated ID. Notice that the first field called uid is the auto-generated I.D - this is required be default.
 
-```$db->query("insert into users(uid,first,last,city,phone) value(Null,'Anthony','Ogundipe','Lagos','08027034534')"); 
-echo $db->newId; //latest id```
+$db->query("insert into users(uid,first,last,city,phone) value(Null,'Anthony','Ogundipe','Lagos','08027034534')"); 
+echo $db->newId; //latest id
 
 ## SELECT Statement
 If you are familiar with MySQL or sql in general, then the commands below will not be new to you. These commands are to select
 or retrieve data that are already existing inside a table.
 
-```$row=$db->query("select * from users"); //select all the data available
+```
+$row=$db->query("select * from users"); //select all the data available
 $row=$db->query("select first,last from users"); //select first and lastname only
+
 $row=$db->query("select last,phone,first from users"); 
+
 $row=$db->query("select first,last from users where city='Lagos' order by uid asc INTEGER_COMPARISON"); //ordering data 
+
 $row=$db->query("select first,last from users where city='Lagos' order by first asc limit 1"); //limiting data returned 
+
 $row=$db->query("select first,last from users where city='Egbe'"); //where clause
+
 $row=$db->query("select first,last from users where uid='2'"); 
+
 $row=$db->query("select first,last from users where uid>'2' and first='Okon'"); //multiple conditions
+
 $row=$db->query("select first,last from users where city='Lagos' and phone='070603223456'"); 
+
 $row=$db->query("select first,last from users where city='Lagos' and phone='08027034534' "); 
+
 $row=$db->query("select first,last from users where city='Lagos' order by phone asc"); 
-$row=$db->query("select first,last from users where city='Lagos' and phone='08027034534' order by phone asc");```
+
+$row=$db->query("select first,last from users where city='Lagos' and phone='08027034534' order by phone asc");
+```
 
 The result will be an array of arrays. You can loop through the associative arrays to get the individual data.
 
 ## UPDATE Statement
 To update records stored in tables, you can use regular MySQL statements.
 
-```$db->query("update users set last='White',city='Broad Street' where uid<'3'");
-$db->query("update users set last='White' "); //this will update the entire column```
-
+```
+$db->query("update users set last='White',city='Broad Street' where uid<'3'");
+$db->query("update users set last='White' "); //this will update the entire column
+```
 
 ## DELETE RECORDS
 
 MySQL delete statements are useful here also. 
 
-```$db->query("delete from users where uid='1'"); //delete conditionally
-$db->query("delete from users"); //delete entire rows - truncate```
-
+```
+$db->query("delete from users where uid='1'"); //delete conditionally
+$db->query("delete from users"); //delete entire rows - truncate
+```
 
 
 ## DELETE TABLE
@@ -75,12 +89,12 @@ To delete all the records stored inside a table.
 
 You can use flat file commands concurrently as shown below. However, flatfile discussion is outside the scope of this tutorial. 
 
-
-```$db = new Flatsql(); 
+```
+$db = new Flatsql(); 
 $db->query("use dbase cms"); 
 $aSingleRow = $db->selectUnique('cms.txt', 0, '2'); 
-var_dump($aSingleRow);```
-
+var_dump($aSingleRow);
+```
 
 ## Note
 This package is a wrapper for the Flatfile Class created by Luke Plant. In fact, the wrapper extends the flat file package and provides all the functionalities of the flat file package which are not mentioned here since this is outside of the scope of this tutorial.
@@ -94,7 +108,7 @@ You can run the 3 examples in the examples folder to give you a quick boost of h
     |-- test1.php
     |-- test2.php
     |-- test3.php
-`-- ffdb
+|-- ffdb
     |-- datadir
 
 
