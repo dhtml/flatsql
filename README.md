@@ -117,7 +117,7 @@ You can run the 3 examples in the examples folder to give you a quick boost of h
 For more information on how to use this flat sql package see:
 
 * our [wiki](https://github.com/dhtml/flatsql/wiki)     
-* We use the [dhtmlframework group](https://groups.google.com/forum/#!forum/dhtmlframework) for issues that are being tracked here on GitHub.
+* [FlatSQL Forum](https://groups.google.com/forum/#!forum/flatsql) for issues.
 
 You can chat with us on facebook http://facebook.com/dhtml5 
 
