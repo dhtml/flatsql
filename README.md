@@ -2,7 +2,7 @@
 
 The FlatSQL package is a small but very powerful set of PHP classes for database management but stores information into "flat files" rather like MySQLite. It provides equivalents to many of the common SQL commands.
 
-This package was created and developed by Anthony Ogundipe, CEO of [DHTMLExtreme](http://www.dhtmlextreme.net).
+This package was created and developed by Anthony Ogundipe, CEO of [Africoders](http://africoders.com).
 
 ### Features
 This package does not require MySQL or any database engine or php plugin for that matter to run, 
